@@ -1,0 +1,29 @@
+{
+  "version": "2.6.2",
+  "release_version": "",
+  "released_at": "",
+  "summary": {
+    "title": "STRIDE - Kasus A - Kelompok 8",
+    "owner": "Kelompok 8",
+    "description": "Sistem presensi perkuliahan berbasis web dengan QR code. Dosen pengampu membuka sesi presensi (berlaku 5 menit) dan QR ditampilkan di kelas. Mahasiswa login dengan akun kampus, memindai QR, lalu aplikasi mengirim ID sesi dan token autentikasi ke Backend Presensi. Backend memverifikasi token ke layanan autentikasi kampus, memeriksa sesi dan keanggotaan kelas di Database Akademik, lalu mencatat satu kehadiran per mahasiswa per sesi. Dosen memantau dan dapat menutup sesi; admin akademik melihat rekap seluruh kelas.\nRuang lingkup: buka/tutup sesi, pemindaian, validasi kehadiran, dan pembacaan rekap. Di luar lingkup: pendaftaran mata kuliah dan perubahan nilai.\nAsumsi: HTTPS; login via SSO kampus; QR statis selama 5 menit; database hanya diakses backend; tidak ada verifikasi lokasi/perangkat.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "DFD Kasus A - Presensi QR",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [],
+        "description": "DFD level komponen utama: aktor, Backend Presensi, layanan autentikasi, Database Akademik, dan trust boundary."
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
