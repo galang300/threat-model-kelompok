@@ -18,12 +18,1656 @@
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "version": "2.6.2",
-        "cells": [],
+        "cells": [
+          {
+            "position": {
+              "x": 40,
+              "y": 1520
+            },
+            "size": {
+              "width": 140,
+              "height": 80
+            },
+            "attrs": {
+              "label": {
+                "text": "Trust Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "3feaa63b-4122-46b2-ad10-23a2d2b4ba09",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            }
+          },
+          {
+            "position": {
+              "x": 252.5,
+              "y": 360.0000000000002
+            },
+            "size": {
+              "width": 200,
+              "height": 500
+            },
+            "attrs": {
+              "label": {
+                "text": "Perangkat pengguna\n          (publik)\n"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "79c53cd1-2b8c-4030-93f9-a5f9bf11ea4f",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Perangkat pengguna\n          (publik)\n",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "810927a4-6153-414b-be39-65dac5312008",
+                "ceaca7c2-4ef2-427f-b0a9-749d97d1e188",
+                "6c7a53e4-8c60-4ed1-b1a2-717e435d73fb",
+                "34faaa3e-d064-4fb8-a6c4-ec24e4abe7c0",
+                "9785db5e-e08d-45de-a55d-1407549d847c",
+                "5148e205-e24a-48dd-ad5e-b7b2e829a652"
+              ],
+              "containedElements": [
+                "02bb52d4-359d-47d0-8c7a-97a64e921662",
+                "d9cc14c8-de4a-4d9e-8a26-c08265c1e547",
+                "6aba4fa3-4579-4158-9957-8710ecd51d5f"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 783.9999999999982,
+              "y": 400.00000000000034
+            },
+            "size": {
+              "width": 170,
+              "height": 160
+            },
+            "attrs": {
+              "label": {
+                "text": "Layanan authentikasi \nKampus"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "69d3d8dc-4d9d-4327-bded-fe5882203b56",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Layanan authentikasi \nKampus",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "32998b59-744b-456d-a56a-14dbf8d511cb",
+                "4fbfcb51-c415-4b4e-9ac8-a9e0ba2d8d55"
+              ],
+              "containedElements": [
+                "4abd460e-549e-4e4c-a9b7-7403faaad940"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 784.9999999999992,
+              "y": 700
+            },
+            "size": {
+              "width": 180,
+              "height": 110
+            },
+            "attrs": {
+              "label": {
+                "text": "Zona Data"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "e78b4ff1-850f-42a3-bc9d-b18f0c122389",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Zona Data",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "9a9d4d20-38be-478b-82f8-3c5b96806c89",
+                "9b0f621d-4334-4269-96b1-2985e21024b4"
+              ],
+              "containedElements": [
+                "5a22e53e-f50e-472f-82c4-6dd2ae54a42b"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 541.9999999999992,
+              "y": 405.0000000000002
+            },
+            "size": {
+              "width": 140,
+              "height": 410
+            },
+            "attrs": {
+              "label": {
+                "text": "Trust Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "9be08f10-3159-41c3-bd0a-24c3c3538924",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "810927a4-6153-414b-be39-65dac5312008",
+                "ceaca7c2-4ef2-427f-b0a9-749d97d1e188",
+                "32998b59-744b-456d-a56a-14dbf8d511cb",
+                "9a9d4d20-38be-478b-82f8-3c5b96806c89",
+                "6c7a53e4-8c60-4ed1-b1a2-717e435d73fb",
+                "34faaa3e-d064-4fb8-a6c4-ec24e4abe7c0",
+                "9785db5e-e08d-45de-a55d-1407549d847c",
+                "4fbfcb51-c415-4b4e-9ac8-a9e0ba2d8d55",
+                "9b0f621d-4334-4269-96b1-2985e21024b4",
+                "5148e205-e24a-48dd-ad5e-b7b2e829a652"
+              ],
+              "containedElements": [
+                "7084b602-4f87-494b-8059-323088df7339"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 541.9999999999992,
+              "y": 540
+            },
+            "size": {
+              "width": 140,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Backend Presensi"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "1f9277b6-88d6-419d-ba0d-69bbcc3cf4f7"
+                },
+                {
+                  "group": "right",
+                  "id": "a3e60fa9-064c-419a-8fda-eabf57cf17ae"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5e5e208a-1f5e-4eba-a434-19b4a471cd65"
+                },
+                {
+                  "group": "left",
+                  "id": "a2e40d5c-6a1e-4da1-9de6-466d720fc129"
+                }
+              ]
+            },
+            "id": "7084b602-4f87-494b-8059-323088df7339",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Process",
+              "name": "Backend Presensi",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "380ce616-3674-479f-8448-b69ce4936720",
+                  "title": "A-T1 Titip absen dengan foto QR yang dibagikan",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Jika mahasiswa di kelas memotret QR dan mengirimkannya ke teman di luar kelas, maka teman tersebut dapat memindai dari jauh dan tercatat hadir padahal tidak hadir. Kondisi: QR statis selama 5 menit dan tidak ada verifikasi lokasi (Asumsi 3 & 5). Dampak: integritas catatan kehadiran rusak. Kemungkinan 3 x Dampak 2 = 6 (Tinggi).",
+                  "mitigation": "QR dinamis yang berotasi tiap 15-30 detik berisi token bertanda tangan server dengan kedaluwarsa singkat; batasi pemindaian dari jaringan kampus atau tambah kode verifikasi dari dosen; dosen dapat membatalkan kehadiran yang mencurigakan.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "6"
+                },
+                {
+                  "id": "3e71fc76-a153-42a1-ab17-bee3900b28d2",
+                  "title": "A-T3 Dosen non-pengampu membuka/menutup sesi kelas lain",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Jika dosen yang tidak mengampu kelas dapat memanggil fungsi buka/tutup sesi dengan ID kelas lain, maka ia dapat membuka sesi palsu atau menutup sesi kelas lain lebih awal. Kondisi: pengecekan hanya peran \"dosen\" tanpa cek kepemilikan kelas. Dampak: melanggar aturan bisnis, mahasiswa sah gagal tercatat. Kemungkinan 2 x Dampak 3 = 6 (Tinggi).",
+                  "mitigation": "Validasi di server bahwa pengguna adalah pengampu kelas tersebut (dari Database Akademik) pada setiap aksi buka/tutup sesi; deny-by-default; uji otorisasi untuk setiap peran.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "6"
+                },
+                {
+                  "id": "7ccf4ee5-60a9-4f8f-90e1-99f3411f9753",
+                  "title": "A-T4 Rekap kelas lain terbaca dengan mengganti ID kelas",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Jika dosen atau mahasiswa dapat mengganti ID kelas pada permintaan rekap/daftar hadir, maka ia dapat membaca daftar nama dan kehadiran kelas yang bukan haknya. Kondisi: endpoint rekap hanya memeriksa status login. Dampak: kebocoran data pribadi akademik. Kemungkinan 2 x Dampak 2 = 4 (Sedang).",
+                  "mitigation": "Otorisasi berbasis peran dan kepemilikan objek pada setiap request (dosen: kelas yang diampu; admin: seluruh kelas; mahasiswa: datanya sendiri); batasi kolom data yang dikembalikan.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "4"
+                },
+                {
+                  "id": "e6abf243-30bc-40cc-b8d2-192fcdb9da19",
+                  "title": "A-T5 Penyangkalan buka/tutup sesi atau pemindaian karena log tidak ",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Jika buka/tutup sesi, pemindaian yang ditolak, dan perubahan daftar hadir tidak dicatat dengan identitas dan waktu server, maka dosen atau mahasiswa dapat menyangkal tindakannya. Dampak: sengketa kehadiran tidak dapat dibuktikan. Kemungkinan 2 x Dampak 2 = 4 (Sedang).",
+                  "mitigation": "Log audit append-only berisi ID pengguna, aksi, ID sesi, waktu server, dan hasil (diterima/ditolak beserta alasan); log hanya dapat dibaca admin dan tidak dapat diubah pengguna aplikasi.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "4"
+                },
+                {
+                  "id": "afb7f4fd-d08c-4d8e-9f86-f2db83c058b1",
+                  "title": "A-T6 Lonjakan pemindaian/layanan autentikasi lambat membuat sesi 5 menit habis",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Jika banyak mahasiswa memindai bersamaan, ada permintaan berulang otomatis, atau layanan autentikasi lambat, maka backend tidak merespons sebelum sesi 5 menit berakhir. Dampak: mahasiswa yang hadir tidak tercatat. Kemungkinan 2 x Dampak 2 = 4 (Sedang).",
+                  "mitigation": "Rate limiting per akun dan per IP; timeout dan retry terbatas ke layanan autentikasi; kapasitas disiapkan untuk jam puncak; dosen dapat memperpanjang atau membuka ulang sesi dengan alasan yang tercatat.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "4"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 798.9999999999992,
+              "y": 730
+            },
+            "size": {
+              "width": 140,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Database Akademik"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "0a6c7a52-acd9-44ea-bc9d-81fa2103c140"
+                },
+                {
+                  "group": "right",
+                  "id": "f1c80335-c22b-4375-9b43-199a317b3b44"
+                },
+                {
+                  "group": "bottom",
+                  "id": "15f84ea1-cb8e-4e5b-88d0-0933e0e38720"
+                },
+                {
+                  "group": "left",
+                  "id": "31478d01-a856-4074-9677-c9fcb5a988e8"
+                }
+              ]
+            },
+            "id": "5a22e53e-f50e-472f-82c4-6dd2ae54a42b",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Store",
+              "name": "Database Akademik",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "fbb131b2-1426-4e93-bf06-155ccadf967e",
+                  "title": "A-T8 Catatan hadir ganda akibat permintaan berulang/serentak",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "Jika mahasiswa mengirim permintaan presensi berulang atau serentak, maka dapat tercipta lebih dari satu catatan hadir per sesi. Dampak: melanggar aturan maksimal satu catatan per sesi; rekap tidak akurat. Kemungkinan 2 x Dampak 1 = 2 (Rendah).",
+                  "mitigation": "Unique constraint (ID sesi, ID mahasiswa) di Database Akademik; operasi insert idempoten; validasi kedaluwarsa memakai jam server.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "2"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "eed9ecec-6489-4496-8704-6c4ce704b298",
+            "source": {
+              "cell": "6aba4fa3-4579-4158-9957-8710ecd51d5f",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "target": {
+              "cell": "6aba4fa3-4579-4158-9957-8710ecd51d5f",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "vertices": [],
+            "parent": "6aba4fa3-4579-4158-9957-8710ecd51d5f"
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "36b91417-46e1-4055-9dcf-92e45ab24f2c",
+            "source": {
+              "cell": "6aba4fa3-4579-4158-9957-8710ecd51d5f",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "target": {
+              "cell": "6aba4fa3-4579-4158-9957-8710ecd51d5f",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F1\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "79c53cd1-2b8c-4030-93f9-a5f9bf11ea4f",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F1\n"
+            ],
+            "id": "810927a4-6153-414b-be39-65dac5312008",
+            "source": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "a2e40d5c-6a1e-4da1-9de6-466d720fc129"
+            },
+            "target": {
+              "cell": "02bb52d4-359d-47d0-8c7a-97a64e921662",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F4\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "79c53cd1-2b8c-4030-93f9-a5f9bf11ea4f",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F4\n"
+            ],
+            "id": "ceaca7c2-4ef2-427f-b0a9-749d97d1e188",
+            "source": {
+              "cell": "6aba4fa3-4579-4158-9957-8710ecd51d5f",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "target": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "a2e40d5c-6a1e-4da1-9de6-466d720fc129"
+            },
+            "vertices": [
+              {
+                "x": 490,
+                "y": 570
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F5a\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "69d3d8dc-4d9d-4327-bded-fe5882203b56",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F5a\n"
+            ],
+            "id": "32998b59-744b-456d-a56a-14dbf8d511cb",
+            "source": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "1f9277b6-88d6-419d-ba0d-69bbcc3cf4f7"
+            },
+            "target": {
+              "cell": "4abd460e-549e-4e4c-a9b7-7403faaad940",
+              "port": "8817e7da-5d98-4977-928b-bce6e2be8a1d"
+            },
+            "vertices": [
+              {
+                "x": 750,
+                "y": 540
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F6\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "e78b4ff1-850f-42a3-bc9d-b18f0c122389",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F6\n"
+            ],
+            "id": "9a9d4d20-38be-478b-82f8-3c5b96806c89",
+            "source": {
+              "cell": "5a22e53e-f50e-472f-82c4-6dd2ae54a42b",
+              "port": "31478d01-a856-4074-9677-c9fcb5a988e8"
+            },
+            "target": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "a3e60fa9-064c-419a-8fda-eabf57cf17ae"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F3\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "79c53cd1-2b8c-4030-93f9-a5f9bf11ea4f",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F3\n"
+            ],
+            "id": "6c7a53e4-8c60-4ed1-b1a2-717e435d73fb",
+            "source": {
+              "cell": "6aba4fa3-4579-4158-9957-8710ecd51d5f",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "target": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "1f9277b6-88d6-419d-ba0d-69bbcc3cf4f7"
+            },
+            "vertices": [
+              {
+                "x": 500,
+                "y": 510
+              },
+              {
+                "x": 550,
+                "y": 510
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F2\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "79c53cd1-2b8c-4030-93f9-a5f9bf11ea4f",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F2\n"
+            ],
+            "id": "34faaa3e-d064-4fb8-a6c4-ec24e4abe7c0",
+            "source": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "a2e40d5c-6a1e-4da1-9de6-466d720fc129"
+            },
+            "target": {
+              "cell": "02bb52d4-359d-47d0-8c7a-97a64e921662",
+              "port": "8817e7da-5d98-4977-928b-bce6e2be8a1d"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F8a\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "79c53cd1-2b8c-4030-93f9-a5f9bf11ea4f",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F8a\n"
+            ],
+            "id": "9785db5e-e08d-45de-a55d-1407549d847c",
+            "source": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "5e5e208a-1f5e-4eba-a434-19b4a471cd65"
+            },
+            "target": {
+              "cell": "d9cc14c8-de4a-4d9e-8a26-c08265c1e547",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 680
+              },
+              {
+                "x": 510,
+                "y": 710
+              },
+              {
+                "x": 450,
+                "y": 740
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F5b\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "69d3d8dc-4d9d-4327-bded-fe5882203b56",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F5b\n"
+            ],
+            "id": "4fbfcb51-c415-4b4e-9ac8-a9e0ba2d8d55",
+            "source": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "1f9277b6-88d6-419d-ba0d-69bbcc3cf4f7"
+            },
+            "target": {
+              "cell": "4abd460e-549e-4e4c-a9b7-7403faaad940",
+              "port": "00ca45fc-e519-4db0-ba86-4aa374fb0615"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F7\n",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "e78b4ff1-850f-42a3-bc9d-b18f0c122389",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F7\n"
+            ],
+            "id": "9b0f621d-4334-4269-96b1-2985e21024b4",
+            "source": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "a3e60fa9-064c-419a-8fda-eabf57cf17ae"
+            },
+            "target": {
+              "cell": "5a22e53e-f50e-472f-82c4-6dd2ae54a42b",
+              "port": "0a6c7a52-acd9-44ea-bc9d-81fa2103c140"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F8b",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "79c53cd1-2b8c-4030-93f9-a5f9bf11ea4f",
+                "9be08f10-3159-41c3-bd0a-24c3c3538924"
+              ]
+            },
+            "labels": [
+              "F8b"
+            ],
+            "id": "5148e205-e24a-48dd-ad5e-b7b2e829a652",
+            "source": {
+              "cell": "d9cc14c8-de4a-4d9e-8a26-c08265c1e547",
+              "port": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+            },
+            "target": {
+              "cell": "7084b602-4f87-494b-8059-323088df7339",
+              "port": "a2e40d5c-6a1e-4da1-9de6-466d720fc129"
+            },
+            "vertices": []
+          },
+          {
+            "position": {
+              "x": 812.7499999999992,
+              "y": 450
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Mahasiswa"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c49ae81e-ca3f-4381-bb10-409fbe68ec45"
+                },
+                {
+                  "group": "right",
+                  "id": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+                },
+                {
+                  "group": "bottom",
+                  "id": "8817e7da-5d98-4977-928b-bce6e2be8a1d"
+                },
+                {
+                  "group": "left",
+                  "id": "00ca45fc-e519-4db0-ba86-4aa374fb0615"
+                }
+              ]
+            },
+            "id": "4abd460e-549e-4e4c-a9b7-7403faaad940",
+            "zIndex": 11,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Mahasiswa",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "50f06bfb-633a-4b47-8524-7d413930551b",
+                  "title": "A-T2 Pengubahan ID mahasiswa/ID sesi pada permintaan presensi",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Jika mahasiswa dapat mengubah parameter ID mahasiswa atau ID sesi dalam permintaan F3, maka ia dapat mencatat hadir untuk mahasiswa lain atau pada sesi kelas lain. Kondisi: backend mempercayai identitas dari klien. Dampak: catatan hadir palsu. Kemungkinan 2 x Dampak 3 = 6 (Tinggi).",
+                  "mitigation": "Ambil identitas mahasiswa hanya dari token yang diverifikasi server; tolak field identitas dari body request; verifikasi tanda tangan (HMAC) token QR; periksa keanggotaan kelas pada setiap permintaan.mahasiswa sah gagal tercatat. Kemungkinan 2 x Dampak 3 = 6 (Tinggi).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "6"
+                },
+                {
+                  "id": "cdc0f6c9-d3f7-4014-9eca-99590f5b08b0",
+                  "title": "A-T7 Token autentikasi palsu/kedaluwarsa diterima backend",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Jika backend menerima token tanpa memeriksa tanda tangan, issuer, audience, dan masa berlaku, maka penyerang dapat memakai token palsu atau kedaluwarsa untuk menyamar sebagai mahasiswa/dosen. Kondisi: login via SSO kampus (Asumsi 2). Dampak: akses tidak sah. Kemungkinan 1 x Dampak 3 = 3 (Sedang).",
+                  "mitigation": "Verifikasi token sesuai standar SSO (tanda tangan, issuer, audience, exp) melalui layanan autentikasi; masa berlaku token singkat; tolak token dari aplikasi lain.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 3,
+                "repudiation": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 296.25,
+              "y": 570
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Dosen \nPengampu"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c49ae81e-ca3f-4381-bb10-409fbe68ec45"
+                },
+                {
+                  "group": "right",
+                  "id": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+                },
+                {
+                  "group": "bottom",
+                  "id": "8817e7da-5d98-4977-928b-bce6e2be8a1d"
+                },
+                {
+                  "group": "left",
+                  "id": "00ca45fc-e519-4db0-ba86-4aa374fb0615"
+                }
+              ]
+            },
+            "id": "02bb52d4-359d-47d0-8c7a-97a64e921662",
+            "zIndex": 12,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Dosen \nPengampu",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 296.25,
+              "y": 730
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Admin akademik"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c49ae81e-ca3f-4381-bb10-409fbe68ec45"
+                },
+                {
+                  "group": "right",
+                  "id": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+                },
+                {
+                  "group": "bottom",
+                  "id": "8817e7da-5d98-4977-928b-bce6e2be8a1d"
+                },
+                {
+                  "group": "left",
+                  "id": "00ca45fc-e519-4db0-ba86-4aa374fb0615"
+                }
+              ]
+            },
+            "id": "d9cc14c8-de4a-4d9e-8a26-c08265c1e547",
+            "zIndex": 13,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Admin akademik",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 268.75,
+              "y": 440
+            },
+            "size": {
+              "width": 140,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Layanan \nAutentikasi Kampus"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c49ae81e-ca3f-4381-bb10-409fbe68ec45"
+                },
+                {
+                  "group": "right",
+                  "id": "186a25d8-dda7-456c-8476-ba32e6fd6bc2"
+                },
+                {
+                  "group": "bottom",
+                  "id": "8817e7da-5d98-4977-928b-bce6e2be8a1d"
+                },
+                {
+                  "group": "left",
+                  "id": "00ca45fc-e519-4db0-ba86-4aa374fb0615"
+                }
+              ]
+            },
+            "id": "6aba4fa3-4579-4158-9957-8710ecd51d5f",
+            "zIndex": 14,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Layanan \nAutentikasi Kampus",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            },
+            "children": [
+              "eed9ecec-6489-4496-8704-6c4ce704b298"
+            ]
+          }
+        ],
         "description": "DFD level komponen utama: aktor, Backend Presensi, layanan autentikasi, Database Akademik, dan trust boundary."
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 8
   }
 }
