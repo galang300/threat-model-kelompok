@@ -1,0 +1,1777 @@
+{
+  "version": "2.6.2",
+  "release_version": "",
+  "released_at": "",
+  "summary": {
+    "title": "STRIDE - Kasus C - Kelompok 8",
+    "owner": "Kelompok 8",
+    "description": "Sistem tiket digital untuk satu acara seminar. Peserta registrasi di portal web; setelah dikonfirmasi sistem, Backend Tiket menerbitkan tiket ber-QR dengan ID unik dan menyimpannya di Database Tiket. Pada hari acara, petugas login di Aplikasi Pemindai dan memindai QR; aplikasi mengirim ID tiket dan sesi petugas ke backend. Backend memeriksa kecocokan acara dan status tiket, mengubah status menjadi telah check-in, lalu mengembalikan hasil. Beberapa pintu memindai paralel; admin acara memantau jumlah check-in dan status tiket dari dashboard web.\nRuang lingkup: registrasi dan penerbitan tiket, pemindaian, validasi, status check-in, dashboard admin. Di luar lingkup: pembayaran, pemasaran acara, pengiriman notifikasi.\nAsumsi: HTTPS; QR hanya memuat ID tiket tanpa tanda tangan; registrasi terbuka dan dikonfirmasi otomatis tanpa CAPTCHA; setiap petugas punya akun individu; Aplikasi Pemindai berjalan di perangkat panitia yang dapat hilang/dipinjamkan.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "DFD Kasus C - E-Ticket",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [
+          {
+            "position": {
+              "x": 40,
+              "y": 40
+            },
+            "size": {
+              "width": 440,
+              "height": 190
+            },
+            "attrs": {
+              "label": {
+                "text": "Zona publik"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "6f057d11-b327-4d53-b729-8180c4f3cf6d",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Zona publik",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "a2f623cb-9780-42a1-bf71-354cbc153cb6",
+                "ed6c7f6a-cf78-4f30-8e53-c2f8167d7a6f"
+              ],
+              "containedElements": [
+                "c2a2cb89-c6a1-4c52-a38e-c0b84ae100e6",
+                "6e73c38b-70f9-4e0c-adaf-83c30f452646"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 260
+            },
+            "size": {
+              "width": 440,
+              "height": 190
+            },
+            "attrs": {
+              "label": {
+                "text": "Zona petugas di lokasi"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "fb201bab-05a8-4dc0-9f9a-89eef79b877d",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Zona petugas di lokasi",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "9d47c575-05ba-4f05-abbd-97e4d2e39a99",
+                "caa87d7f-2317-4a49-8df7-e0356dd154c6"
+              ],
+              "containedElements": [
+                "6fa42261-757d-4d5a-a6bd-4be66cec3949",
+                "6f3e3e08-1c9e-4b66-abfc-2e14f0f07b33"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 480
+            },
+            "size": {
+              "width": 440,
+              "height": 130
+            },
+            "attrs": {
+              "label": {
+                "text": "Zona admin"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "980426c6-0e33-4fc6-ad68-65932118df82",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Zona admin",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "aca8bbe1-cd3f-41cf-a509-0447775649e3",
+                "d9f71c58-ebb4-44cf-89d6-587c68dd38e7"
+              ],
+              "containedElements": [
+                "70e78757-7fc9-4b16-ac49-128b0be13e4b"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 580,
+              "y": 40
+            },
+            "size": {
+              "width": 220,
+              "height": 570
+            },
+            "attrs": {
+              "label": {
+                "text": "Zona backend"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "8cc35803-a7e9-44eb-8f66-f01502323c4a",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Zona backend",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "a2f623cb-9780-42a1-bf71-354cbc153cb6",
+                "ed6c7f6a-cf78-4f30-8e53-c2f8167d7a6f",
+                "9d47c575-05ba-4f05-abbd-97e4d2e39a99",
+                "caa87d7f-2317-4a49-8df7-e0356dd154c6",
+                "aca8bbe1-cd3f-41cf-a509-0447775649e3",
+                "d9f71c58-ebb4-44cf-89d6-587c68dd38e7",
+                "1234ba10-fca8-4492-b418-ce26fd17e307",
+                "f7770d0c-8dd1-42f4-9322-f0e9a4d98b33"
+              ],
+              "containedElements": [
+                "41a6b252-c300-4726-b632-ced0770fa09c"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 900,
+              "y": 40
+            },
+            "size": {
+              "width": 220,
+              "height": 570
+            },
+            "attrs": {
+              "label": {
+                "text": "Zona data"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "3410a5b4-42c9-4e79-bdf1-ce4732db90b8",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Zona data",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "1234ba10-fca8-4492-b418-ce26fd17e307",
+                "f7770d0c-8dd1-42f4-9322-f0e9a4d98b33"
+              ],
+              "containedElements": [
+                "1e83c4ba-c2b5-443d-af28-6a9fb00e80ad"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 70,
+              "y": 105
+            },
+            "size": {
+              "width": 140,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Peserta"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c2dddc97-01cc-4847-ba15-d444c949050e"
+                },
+                {
+                  "group": "right",
+                  "id": "f6f87ef6-a0cc-46d9-b04e-e406dc47ee8c"
+                },
+                {
+                  "group": "bottom",
+                  "id": "b052ee69-aa45-45d6-9f20-0dc1319e679a"
+                },
+                {
+                  "group": "left",
+                  "id": "cf0fcfa7-cad0-463e-910e-3b61aafd8f81"
+                }
+              ]
+            },
+            "id": "c2a2cb89-c6a1-4c52-a38e-c0b84ae100e6",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Peserta",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "0d929203-d8c1-4218-8bc7-f4601c54c7e0",
+                  "title": "C-T1 Tangkapan layar QR tiket dipakai orang lain untuk masuk lebih dulu",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Jika peserta membagikan atau kehilangan tangkapan layar QR, maka orang lain dapat masuk lebih dulu dengan QR yang sama dan pemilik sah ditolak karena tiket sudah check-in. Kondisi: QR statis berisi ID tiket (Asumsi 2). Dampak: orang tidak berhak masuk, peserta sah dirugikan. Kemungkinan 3 x Dampak 2 = 6 (Tinggi).",
+                  "mitigation": "ID tiket acak yang tidak dapat ditebak; hasil validasi menampilkan nama peserta untuk dicocokkan dengan identitas bila perlu; opsi QR dinamis di portal yang diperbarui berkala pada hari acara; prosedur penanganan sengketa berbasis log.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 320,
+              "y": 75
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Portal Web (publik)"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "ed628236-619e-4633-96ba-ab48afcb4c31"
+                },
+                {
+                  "group": "right",
+                  "id": "7ab4b7b8-218b-4d56-822f-14f2d3052e3c"
+                },
+                {
+                  "group": "bottom",
+                  "id": "87d8b628-96cb-4e8a-8eac-7eb6b5b2bd15"
+                },
+                {
+                  "group": "left",
+                  "id": "8a554b9f-e5e3-40fc-bdf5-9dee4023df35"
+                }
+              ]
+            },
+            "id": "6e73c38b-70f9-4e0c-adaf-83c30f452646",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Process",
+              "name": "Portal Web (publik)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "7eca51b5-7457-447c-90dd-5e5d1c2285b6",
+                  "title": "C-T6 Tiket dan data peserta lain terbaca dengan mengganti ID tiket",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Jika halaman tiket di portal diakses dengan ID tiket pada URL tanpa memeriksa pemiliknya, maka pengunjung dapat mengganti ID dan melihat tiket serta identitas peserta lain, lalu memakai QR tersebut. Dampak: kebocoran data pribadi, tiket dapat dicuri. Kemungkinan 2 x Dampak 2 = 4 (Sedang).",
+                  "mitigation": "Tampilan tiket hanya untuk peserta yang terautentikasi/terverifikasi sebagai pemilik; ID tiket acak; respons Aplikasi Pemindai hanya berisi data minimum yang dibutuhkan petugas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "4"
+                },
+                {
+                  "id": "9e10a08c-6c4f-4c15-be67-84bfdaa60cbe",
+                  "title": "C-T8 Registrasi massal oleh bot menghabiskan kuota tiket",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Jika skrip otomatis dapat mengirim formulir registrasi berulang ke Portal Web, maka kuota tiket acara habis oleh registrasi palsu dan peserta asli tidak dapat mendaftar. Kondisi: Asumsi 3. Dampak: peserta sah gagal memperoleh tiket, data registrasi tercemar. Kemungkinan 2 x Dampak 2 = 4 (Sedang).",
+                  "mitigation": "CAPTCHA atau tantangan anti-bot; rate limiting per IP; satu registrasi per alamat email terverifikasi; admin dapat membatalkan registrasi yang mencurigakan.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "4"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 70,
+              "y": 325
+            },
+            "size": {
+              "width": 140,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Petugas pintu"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "247449f3-5ff1-4ab4-9ac6-9ec4f57b3a30"
+                },
+                {
+                  "group": "right",
+                  "id": "bc2f9c91-d650-4771-a799-2bdf8af2ef92"
+                },
+                {
+                  "group": "bottom",
+                  "id": "67a2e5a0-64b1-44c1-a608-41cc1884a545"
+                },
+                {
+                  "group": "left",
+                  "id": "a725e847-8859-4dbe-86f4-db61e0524ed6"
+                }
+              ]
+            },
+            "id": "6fa42261-757d-4d5a-a6bd-4be66cec3949",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Petugas pintu",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "2c9b9012-15ef-46f3-aadd-0d40a65890f0",
+                  "title": "C-T2 Pihak luar menyamar sebagai petugas dan menandai tiket orang lain sebagai check-in",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Jika pihak luar dapat memanggil API validasi tanpa sesi petugas yang sah, atau memakai perangkat/sesi petugas yang hilang (Asumsi 5), maka ia dapat menandai tiket peserta lain sebagai check-in sehingga peserta sah ditolak. Dampak: sabotase antrean masuk, integritas status rusak. Kemungkinan 2 x Dampak 3 = 6 (Tinggi).",
+                  "mitigation": "Backend memvalidasi sesi petugas di setiap permintaan F5; masa berlaku sesi singkat dan terikat hari acara; admin dapat mencabut sesi/perangkat yang hilang; login petugas dengan kredensial individu (dan faktor kedua bila memungkinkan).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 320,
+              "y": 295
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Aplikasi Pemindai"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "6ef46f76-6a70-49c5-a4ca-2dd527549a7d"
+                },
+                {
+                  "group": "right",
+                  "id": "27cce039-b1a9-490c-bd27-e19c84710338"
+                },
+                {
+                  "group": "bottom",
+                  "id": "90dbd12d-db5c-4e5f-ae05-1ea0b5d4a0f9"
+                },
+                {
+                  "group": "left",
+                  "id": "17cb9cde-cc92-47e5-84fe-03e08f77c498"
+                }
+              ]
+            },
+            "id": "6f3e3e08-1c9e-4b66-abfc-2e14f0f07b33",
+            "zIndex": 4,
+            "data": {
+              "type": "tm.Process",
+              "name": "Aplikasi Pemindai",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 70,
+              "y": 515
+            },
+            "size": {
+              "width": 140,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Admin acara"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "1abae6d8-1680-4489-9f5c-e1bdfe8fd061"
+                },
+                {
+                  "group": "right",
+                  "id": "dfba92f3-421f-4783-9bf4-c083f7b1a965"
+                },
+                {
+                  "group": "bottom",
+                  "id": "15768f44-3421-457f-b085-1a14527a0cac"
+                },
+                {
+                  "group": "left",
+                  "id": "3fa931ee-9c05-436e-8271-0c427c49f50a"
+                }
+              ]
+            },
+            "id": "70e78757-7fc9-4b16-ac49-128b0be13e4b",
+            "zIndex": 5,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Admin acara",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 630,
+              "y": 295
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Backend Tiket"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "b38247fe-78bd-4c75-80a8-94ba5f15aa66"
+                },
+                {
+                  "group": "right",
+                  "id": "ac37b407-fcef-496e-bec3-d0a012be3277"
+                },
+                {
+                  "group": "bottom",
+                  "id": "8ac6092c-0812-4574-bb69-7e7b242816a5"
+                },
+                {
+                  "group": "left",
+                  "id": "976b901c-487c-4d94-be38-c7c6ba5141bd"
+                }
+              ]
+            },
+            "id": "41a6b252-c300-4726-b632-ced0770fa09c",
+            "zIndex": 6,
+            "data": {
+              "type": "tm.Process",
+              "name": "Backend Tiket",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "8e0bd609-b01d-4f3c-ad0b-7ac28af3bfcc",
+                  "title": "C-T3 Petugas/peserta mengakses fungsi dashboard admin",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Jika petugas atau peserta dapat memanggil endpoint dashboard atau fungsi perubahan status, maka ia dapat melihat seluruh daftar peserta atau mengubah status tiket di luar proses pemindaian. Kondisi: otorisasi hanya memeriksa status login, bukan peran. Dampak: kebocoran data peserta, manipulasi status. Kemungkinan 2 x Dampak 3 = 6 (Tinggi).",
+                  "mitigation": "Kontrol akses berbasis peran di backend untuk setiap endpoint (peserta: tiketnya sendiri; petugas: validasi saja; admin: dashboard); deny-by-default; uji akses lintas peran.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "6"
+                },
+                {
+                  "id": "0b082f58-e0c5-469a-824f-e1f5a1166482",
+                  "title": "C-T7 Sengketa check-in tidak dapat dibuktikan karena log tidak mencatat petugas/pintu",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Jika backend tidak mencatat siapa petugas, pintu mana, dan kapan tiket di-check-in (termasuk percobaan yang ditolak), maka petugas dapat menyangkal meloloskan tiket dan peserta tidak dapat membuktikan tiketnya dipakai orang lain. Dampak: sengketa tidak terselesaikan, penyalahgunaan tidak terdeteksi. Kemungkinan 2 x Dampak 2 = 4 (Sedang).",
+                  "mitigation": "Log audit append-only per pemindaian berisi ID tiket, ID petugas, ID pintu/perangkat, waktu server, dan hasil; admin hanya memiliki hak baca atas log.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "4"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 940,
+              "y": 325
+            },
+            "size": {
+              "width": 140,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Database Tiket"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "a03de22b-d4c2-44c3-95b8-09df86182a07"
+                },
+                {
+                  "group": "right",
+                  "id": "2fef0aba-b9a9-44e9-ac03-f3f39a359b1a"
+                },
+                {
+                  "group": "bottom",
+                  "id": "63c8c029-1a00-41e5-ad43-8f2d77d977bb"
+                },
+                {
+                  "group": "left",
+                  "id": "11040b9c-5d88-4cf4-81c1-828245e28dc8"
+                }
+              ]
+            },
+            "id": "1e83c4ba-c2b5-443d-af28-6a9fb00e80ad",
+            "zIndex": 7,
+            "data": {
+              "type": "tm.Store",
+              "name": "Database Tiket",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "6e8fbfb2-12ba-48f4-9515-31eef844ab41",
+                  "title": "C-T5 Pemindaian paralel di dua pintu membuat satu tiket check-in dua kali",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Jika dua pintu memindai QR yang sama hampir bersamaan dan backend membaca status lalu menulis secara terpisah, maka kedua permintaan dapat dinyatakan valid. Dampak: melanggar aturan satu tiket satu check-in. Kemungkinan 2 x Dampak 2 = 4 (Sedang).",
+                  "mitigation": "Pembaruan status atomik bersyarat (ubah menjadi check-in hanya jika status masih terbit, dalam satu operasi/transaksi); kembalikan sudah check-in beserta waktu dan pintu bila gagal.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "4"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F1 Data formulir registrasi",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "F1 Data formulir registrasi"
+            ],
+            "id": "33cdd83b-96b9-4fdb-86bb-4d5e3b8e6195",
+            "source": {
+              "cell": "c2a2cb89-c6a1-4c52-a38e-c0b84ae100e6",
+              "port": "f6f87ef6-a0cc-46d9-b04e-e406dc47ee8c"
+            },
+            "target": {
+              "cell": "6e73c38b-70f9-4e0c-adaf-83c30f452646",
+              "port": "8a554b9f-e5e3-40fc-bdf5-9dee4023df35"
+            },
+            "vertices": [
+              {
+                "x": 265,
+                "y": 115
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F3b Tiket ber-QR ditampilkan",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "F3b Tiket ber-QR ditampilkan"
+            ],
+            "id": "8f436c3a-0e95-4653-99e5-ec37ee5b4542",
+            "source": {
+              "cell": "6e73c38b-70f9-4e0c-adaf-83c30f452646",
+              "port": "8a554b9f-e5e3-40fc-bdf5-9dee4023df35"
+            },
+            "target": {
+              "cell": "c2a2cb89-c6a1-4c52-a38e-c0b84ae100e6",
+              "port": "f6f87ef6-a0cc-46d9-b04e-e406dc47ee8c"
+            },
+            "vertices": [
+              {
+                "x": 265,
+                "y": 155
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F2 Permintaan registrasi / tampilan tiket",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": [
+                "6f057d11-b327-4d53-b729-8180c4f3cf6d",
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a"
+              ]
+            },
+            "labels": [
+              "F2 Permintaan registrasi / tampilan tiket"
+            ],
+            "id": "a2f623cb-9780-42a1-bf71-354cbc153cb6",
+            "source": {
+              "cell": "6e73c38b-70f9-4e0c-adaf-83c30f452646",
+              "port": "7ab4b7b8-218b-4d56-822f-14f2d3052e3c"
+            },
+            "target": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "976b901c-487c-4d94-be38-c7c6ba5141bd"
+            },
+            "vertices": [
+              {
+                "x": 535,
+                "y": 225
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F3a Konfirmasi dan tiket ber-QR",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": [
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a",
+                "6f057d11-b327-4d53-b729-8180c4f3cf6d"
+              ]
+            },
+            "labels": [
+              "F3a Konfirmasi dan tiket ber-QR"
+            ],
+            "id": "ed6c7f6a-cf78-4f30-8e53-c2f8167d7a6f",
+            "source": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "976b901c-487c-4d94-be38-c7c6ba5141bd"
+            },
+            "target": {
+              "cell": "6e73c38b-70f9-4e0c-adaf-83c30f452646",
+              "port": "7ab4b7b8-218b-4d56-822f-14f2d3052e3c"
+            },
+            "vertices": [
+              {
+                "x": 535,
+                "y": 265
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F4 Login petugas + QR dipindai",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "F4 Login petugas + QR dipindai"
+            ],
+            "id": "275638f1-72e2-499e-810d-1fa4550d2eb7",
+            "source": {
+              "cell": "6fa42261-757d-4d5a-a6bd-4be66cec3949",
+              "port": "bc2f9c91-d650-4771-a799-2bdf8af2ef92"
+            },
+            "target": {
+              "cell": "6f3e3e08-1c9e-4b66-abfc-2e14f0f07b33",
+              "port": "17cb9cde-cc92-47e5-84fe-03e08f77c498"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null,
+                "strokeWidth": 2.5
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F5 ID tiket + sesi petugas + ID pintu",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [
+                {
+                  "id": "9fe656e5-7b3d-4333-a148-1d85b83dac90",
+                  "title": "C-T4 Internet di lokasi terputus atau backend kelebihan beban saat jam masuk",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Jika internet di lokasi terputus atau banyak pintu memindai serentak hingga backend kelebihan beban, maka Aplikasi Pemindai tidak menerima hasil validasi dan semua pintu berhenti. Kondisi: aplikasi memerlukan koneksi internet. Dampak: antrean panjang, acara terganggu, petugas tergoda meloloskan peserta tanpa validasi. Kemungkinan 2 x Dampak 3 = 6 (Tinggi).",
+                  "mitigation": "Koneksi cadangan (misalnya jaringan seluler kedua); kapasitas backend diuji untuk puncak jam masuk; rate limiting per sesi petugas; prosedur darurat tertulis (pencatatan manual ID tiket yang direkonsiliasi setelah koneksi pulih) yang disetujui penyelenggara.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "6"
+                }
+              ],
+              "trustBoundaryIds": [
+                "fb201bab-05a8-4dc0-9f9a-89eef79b877d",
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a"
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1
+              }
+            },
+            "labels": [
+              "F5 ID tiket + sesi petugas + ID pintu"
+            ],
+            "id": "9d47c575-05ba-4f05-abbd-97e4d2e39a99",
+            "source": {
+              "cell": "6f3e3e08-1c9e-4b66-abfc-2e14f0f07b33",
+              "port": "27cce039-b1a9-490c-bd27-e19c84710338"
+            },
+            "target": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "976b901c-487c-4d94-be38-c7c6ba5141bd"
+            },
+            "vertices": [
+              {
+                "x": 535,
+                "y": 335
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F6 Hasil validasi",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": [
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a",
+                "fb201bab-05a8-4dc0-9f9a-89eef79b877d"
+              ]
+            },
+            "labels": [
+              "F6 Hasil validasi"
+            ],
+            "id": "caa87d7f-2317-4a49-8df7-e0356dd154c6",
+            "source": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "976b901c-487c-4d94-be38-c7c6ba5141bd"
+            },
+            "target": {
+              "cell": "6f3e3e08-1c9e-4b66-abfc-2e14f0f07b33",
+              "port": "27cce039-b1a9-490c-bd27-e19c84710338"
+            },
+            "vertices": [
+              {
+                "x": 535,
+                "y": 375
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F8a Permintaan dashboard",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": [
+                "980426c6-0e33-4fc6-ad68-65932118df82",
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a"
+              ]
+            },
+            "labels": [
+              "F8a Permintaan dashboard"
+            ],
+            "id": "aca8bbe1-cd3f-41cf-a509-0447775649e3",
+            "source": {
+              "cell": "70e78757-7fc9-4b16-ac49-128b0be13e4b",
+              "port": "dfba92f3-421f-4783-9bf4-c083f7b1a965"
+            },
+            "target": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "976b901c-487c-4d94-be38-c7c6ba5141bd"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 430
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F8b Jumlah check-in dan status tiket",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": [
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a",
+                "980426c6-0e33-4fc6-ad68-65932118df82"
+              ]
+            },
+            "labels": [
+              "F8b Jumlah check-in dan status tiket"
+            ],
+            "id": "d9f71c58-ebb4-44cf-89d6-587c68dd38e7",
+            "source": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "976b901c-487c-4d94-be38-c7c6ba5141bd"
+            },
+            "target": {
+              "cell": "70e78757-7fc9-4b16-ac49-128b0be13e4b",
+              "port": "dfba92f3-421f-4783-9bf4-c083f7b1a965"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F7a Simpan tiket / perbarui status check-in",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": [
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a",
+                "3410a5b4-42c9-4e79-bdf1-ce4732db90b8"
+              ]
+            },
+            "labels": [
+              "F7a Simpan tiket / perbarui status check-in"
+            ],
+            "id": "1234ba10-fca8-4492-b418-ce26fd17e307",
+            "source": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "ac37b407-fcef-496e-bec3-d0a012be3277"
+            },
+            "target": {
+              "cell": "1e83c4ba-c2b5-443d-af28-6a9fb00e80ad",
+              "port": "11040b9c-5d88-4cf4-81c1-828245e28dc8"
+            },
+            "vertices": [
+              {
+                "x": 845,
+                "y": 335
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "F7b Data acara dan status tiket",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": [
+                "3410a5b4-42c9-4e79-bdf1-ce4732db90b8",
+                "8cc35803-a7e9-44eb-8f66-f01502323c4a"
+              ]
+            },
+            "labels": [
+              "F7b Data acara dan status tiket"
+            ],
+            "id": "f7770d0c-8dd1-42f4-9322-f0e9a4d98b33",
+            "source": {
+              "cell": "1e83c4ba-c2b5-443d-af28-6a9fb00e80ad",
+              "port": "11040b9c-5d88-4cf4-81c1-828245e28dc8"
+            },
+            "target": {
+              "cell": "41a6b252-c300-4726-b632-ced0770fa09c",
+              "port": "ac37b407-fcef-496e-bec3-d0a012be3277"
+            },
+            "vertices": [
+              {
+                "x": 845,
+                "y": 375
+              }
+            ]
+          }
+        ],
+        "description": "DFD level komponen utama: portal publik terpisah dari aplikasi pemindai petugas, proses pembaruan status tiket di Backend Tiket, dashboard admin, dan trust boundary antaraktor dan backend."
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 8
+  }
+}
